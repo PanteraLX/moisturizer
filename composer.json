@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Example\\": "src/"
+      "Moisturizer\\": "src/"
     }
   }
 }
