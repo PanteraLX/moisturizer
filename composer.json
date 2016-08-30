@@ -13,6 +13,7 @@
     "php": ">=5.5.0",
     "filp/whoops": ">=1.1.2",
     "patricklouys/http": ">=1.1.0",
+    "mustache/mustache": "~2.5",
     "nikic/fast-route": "^1.0",
     "rdlowrey/auryn": "^1.4"
   },
