@@ -53,13 +53,12 @@ switch ($routeInfo[0]) {
         $method = $routeInfo[1][1];
         $vars = $routeInfo[2];
 
-        $class = new $className;
+        $class = new $className($response);
         $class->$method($vars);
         break;
 }
 foreach ($response->getHeaders() as $header) {
     header($header, false);
 }
-echo $response->getContent();
 
 echo $response->getContent();

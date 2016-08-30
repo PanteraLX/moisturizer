@@ -2,10 +2,19 @@
 
 namespace Moisturizer\Controller;
 
+use Http\Response;
+
 class Homepage
 {
+    private $response;
+
+    public function __construct(Response $response)
+    {
+        $this->response = $response;
+    }
+
     public function show()
     {
-        echo 'Hello World';
+        $this->response->setContent('Hello World');
     }
 }
