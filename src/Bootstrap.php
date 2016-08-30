@@ -2,7 +2,8 @@
 
 namespace Moisturizer;
 
-use Exception;
+use Http\HttpRequest;
+use Http\HttpResponse;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
@@ -25,4 +26,11 @@ if ($environment !== 'production') {
 }
 $whoops->register();
 
-throw new Exception;
+$request = new HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
+$response = new HttpResponse();
+
+foreach ($response->getHeaders() as $header) {
+    header($header, false);
+}
+
+echo $response->getContent();
